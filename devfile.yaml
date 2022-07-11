@@ -16,10 +16,6 @@ parent:
   registryUrl: "https://registry.devfile.io"
 components:
   - name: outerloop-build
-    container:
-      env:
-        - name: OPENSHIFT_TEST
-          value: dfdf
     image:
       imageName: java-springboot-image:latest
       dockerfile:
