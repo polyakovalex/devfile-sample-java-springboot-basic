@@ -15,9 +15,12 @@ public class DemoApplication {
     @Value("${demo.test}")
     private String test;
 
+    @Value("${demo.db}")
+    private String db;
+
     @RequestMapping("/")
     String home() {
-        return "Hello World! "+test;
+        return "Hello World! "+test+" "+db;
     }
 
     public static void main(String[] args) {

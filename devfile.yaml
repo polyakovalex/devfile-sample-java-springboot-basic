@@ -22,6 +22,9 @@ components:
         uri: docker/Dockerfile
         buildContext: .
         rootRequired: false
+    envFrom:
+      - secretRef:
+        name: db-passwd-secret
   - name: outerloop-deploy
     attributes:
       deployment/replicas: 1
