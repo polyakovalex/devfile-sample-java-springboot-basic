@@ -10,22 +10,18 @@ metadata:
   projectType: "springboot"
   language: "java"
   provider: Red Hat
+  supportUrl: https://github.com/devfile-samples/devfile-support#support-information
 parent:
   id: java-springboot
   registryUrl: "https://registry.devfile.io"
 components:
   - name: outerloop-build
-    container:
-    env:
-      - name: OPENSHIFT_TEST
-        value: 'valueA'
     image:
       imageName: java-springboot-image:latest
       dockerfile:
         uri: docker/Dockerfile
         buildContext: .
         rootRequired: false
-
   - name: outerloop-deploy
     attributes:
       deployment/replicas: 1
